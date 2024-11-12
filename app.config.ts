@@ -1,8 +1,7 @@
 export default defineAppConfig({
   ui: {
-    primary: 'cyan',
+    primary: 'blue',
     gray: 'slate',
-
     button: {
       padding: {
         '2xs': 'px-2 py-1',

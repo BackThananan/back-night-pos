@@ -9,20 +9,16 @@
               :ui="{rounded: 'rounded-full'}"
               size="lg" color="gray" variant="ghost" icon="i-heroicons-bars-3-20-solid"
               @click="emit('clickMenus')"
-          >
-
-          </UButton>
+          ></UButton>
         </div>
         <div class="flex gap-4">
-
           <ClientOnly>
             <UButton
                 :ui="{rounded: 'rounded-full'}"
-                size="lg" color="gray" variant="ghost"
                 :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
+                size="lg" color="gray" variant="ghost"
                 @click="isDark = !isDark"
-            >
-            </UButton>
+            ></UButton>
           </ClientOnly>
           <UAvatar
               size="md"
