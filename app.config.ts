@@ -16,6 +16,32 @@ export default defineAppConfig({
           ghost: `text-light-link dark:text-dark-link hover:text-primary-500 dark:hover:text-dark-link hover:bg-light-gray dark:hover:bg-dark-gray`
         }
       }
+    },
+    input: {
+      color: {
+        white: {
+          outline: 'shadow-sm bg-white dark:bg-dark text-gray-900 dark:text-white focus:ring-1',
+        }
+      },
+      size: {
+        lg: 'text-base',
+      },
+      default: {
+        size: 'lg'
+      }
+    },
+    select: {
+      color: {
+        white: {
+          outline: 'shadow-sm bg-white dark:bg-dark text-gray-900 dark:text-white focus:ring-1',
+        }
+      },
+      size: {
+        lg: 'text-base',
+      },
+      default: {
+        size: 'lg'
+      }
     }
   }
 })

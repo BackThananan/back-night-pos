@@ -4,11 +4,23 @@
       <div class="overflow-hidden">
         <div class="h-[calc(100vh-190px)] overflow-y-auto overflow-x-hidden">
           <ul class="px-4">
-            <p
-                :class="{'text-center' : isSmall}"
-                class="text-xs uppercase font-medium text-light-link dark:text-dark-link mb-2">Home</p>
+            <template v-for="{to,text,icon} in mainMenus" :key="`main-menu-${text}`">
+              <ULink
+                  :to="to"
+                  class="flex items-center gap-2 w-full px-3 py-2.5 rounded-md font-normal text-sm mb-0.5 "
+                  :class="{'!px-2 justify-center' : isSmall}"
+                  active-class="bg-primary-500 text-white dark:text-white"
+                  inactive-class="text-light-link dark:text-dark-link text-light-link hover:bg-primary-50 hover:text-primary dark:hover:bg-dark-gray"
 
-            <template v-for="{to,text,icon} in menus" :key="`menu-${text}`">
+              >
+                <UIcon class="w-5 h-5" :name="icon"/>
+                <span :class="{'hidden' :isSmall}">{{ text }}</span>
+              </ULink>
+            </template>
+            <p :class="{'text-center' : isSmall}"
+               class="text-xs uppercase font-medium text-light-link dark:text-dark-link mb-1.5 mt-3.5">เมนู</p>
+
+            <template v-for="{to,text,icon} in foodMenus" :key="`food-menu-${text}`">
               <ULink
                   :to="to"
                   class="flex items-center gap-2 w-full px-3 py-2.5 rounded-md font-normal text-sm mb-0.5 "
@@ -51,22 +63,28 @@ withDefaults(defineProps<{
   isSmall: false
 })
 
-
 type TMenus = {
   icon: string,
   to: string,
   text: string
 }
-const menus: TMenus[] = [
+
+const mainMenus: TMenus[] = [{
+  icon: 'i-heroicons-home',
+  to: '/',
+  text: 'หน้าหลัก'
+}]
+
+const foodMenus: TMenus[] = [
   {
-    icon: 'i-heroicons-home',
-    to: '/',
-    text: 'Home'
+    icon: 'i-heroicons-square-3-stack-3d',
+    to: '/menu/type',
+    text: 'ประเภท'
   },
   {
-    icon: 'i-heroicons-briefcase',
-    to: '/dashboard',
-    text: 'Dashboard'
+    icon: 'i-heroicons-folder',
+    to: '/menu/group',
+    text: 'กลุ่มเมนู'
   }
 ]
 </script>

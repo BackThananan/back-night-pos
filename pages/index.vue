@@ -1,5 +1,5 @@
 <template>
-  <section class="container max-w-7xl mx-auto py-5 px-5">
+  <section class="container  mx-auto py-5 px-5">
     <div class="flex flex-col">
       <template v-for="i in 100">
         <p>{{ i }}</p>

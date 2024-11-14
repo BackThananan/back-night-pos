@@ -2,9 +2,9 @@
   <main>
     <div class="flex">
       <the-side-navigation v-model="isSmall"/>
-      <div class="w-full page-wrapper">
+      <div class="w-full page-wrapper overflow-x-hidden">
         <the-header @click-menus="onClickMenu"/>
-        <div class="max-w-full pt-6">
+        <div class="max-w-full pt-6 ">
           <slot/>
         </div>
       </div>
